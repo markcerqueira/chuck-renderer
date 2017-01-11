@@ -34,5 +34,6 @@ How to do stuff:
 #### TODO
 
 * `make linux-alsa` since it has the fewest dependencies
+* Convert from .wav to something more lightweight like .m4a
 
 [1]: https://github.com/thoom/sinatra-mock
