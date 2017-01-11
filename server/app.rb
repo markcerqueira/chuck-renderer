@@ -13,7 +13,7 @@ DURATION_LIMIT_SECONDS = 3
 get '/render' do
   filename = "#{SecureRandom.hex}.wav"
 
-  `/bin/chuck export.ck:basic.ck:#{OUTPUT_FOLDER}#{filename}:#{LIMIT_DURATION}:#{DURATION_LIMIT_SECONDS}`
+  `chuck --silent export.ck:basic.ck:#{OUTPUT_FOLDER}#{filename}:#{LIMIT_DURATION}:#{DURATION_LIMIT_SECONDS}`
 
   attachment filename
   content_type 'application/octet-stream'

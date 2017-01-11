@@ -2,6 +2,9 @@
 Docker image for chuck
 
 #### Build
+
+Set up Docker (`brew cask install docker`) if you don't have it yet. Then:
+
 	docker build -t chuck-renderer .
 
 #### Run
@@ -16,10 +19,20 @@ Docker image for chuck
 	CONTAINER ID        IMAGE               COMMAND                   PORTS 
 	0b40c14f68de        chuck-renderer      "thin -R config.ru -p"    0.0.0.0:9000->9000/tcp
 
-Locally, the server in `server/app.rb` can be accessed with a browser by visiting `http://0.0.0.0:9000/`. The Docker image can be stopped with `docker stop $ID`.
+How to do stuff: 
+
+* Locally, the server in `server/app.rb` can be accessed with a browser by visiting `0.0.0.0:9000/`.
+* Accessing `0.0.0.0:9000/render` renders basic.ck and downloads the .wav file.
+* The image can be stopped with `docker stop $ID`.
+* Logs can be access with `docker logs $ID`.
+* To get shell access to the running image: `sudo docker exec -i -t $ID /bin/bash`. Type `exit` in this shell to exit.
 
 #### Resources
 
 * Sinatra stub and Dockerfile setup adapted from [sinatra-mock][1]
+
+#### TODO
+
+* `make linux-alsa` since it has the fewest dependencies
 
 [1]: https://github.com/thoom/sinatra-mock
