@@ -35,5 +35,7 @@ How to do stuff:
 
 * `make linux-alsa` since it has the fewest dependencies
 * Convert from .wav to something more lightweight like .m4a
+* Set this repo up as a [Trusted Build][2]
 
 [1]: https://github.com/thoom/sinatra-mock
+[2]: https://blog.docker.com/2013/11/introducing-trusted-builds/
