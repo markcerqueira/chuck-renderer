@@ -3,12 +3,12 @@ Docker image for chuck
 
 #### Build
 
-Set up Docker (`brew cask install docker`) if you don't have it yet. Then:
+Set up Docker (`brew cask install docker`) if you don't have it yet. Clone this repository, cd into it, and build it:
 
 	docker build -t chuck-renderer .
 
 #### Run
-	# Map port 9000 to port 9000 if the Docker image and run the image detached
+	# Map port 9000 of host to port 9000 of the image and run the image detached
 	ID=$(docker run -p 9000:9000 -d chuck-renderer)
 
 `ID` is now set to the container id of the image and `docker ps` will show the chuck-renderer running:
