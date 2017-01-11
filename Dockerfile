@@ -15,6 +15,7 @@ RUN apt-get install -y \
 	rubygems \
 	ruby-dev
 	
+# Install sinatra and thin gems
 RUN gem install sinatra thin
 	
 # Clone ChucK, build it, copy it to /bin/
@@ -28,8 +29,8 @@ RUN git clone https://github.com/ccrma/chuck.git \
 WORKDIR /server
 COPY server .
 
-# CMD ["/bin/chuck"]
-
+# Expose port 9000 so we can access the server
 EXPOSE 9000
 
+# Run thin server
 CMD ["thin", "-R", "config.ru", "-p", "9000", "start"]
