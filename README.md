@@ -1,5 +1,5 @@
 ### chuck-renderer
-Docker image for chuck
+Docker image for ChucK rendering as a service
 
 #### Build
 
