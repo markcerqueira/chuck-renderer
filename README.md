@@ -3,7 +3,7 @@ Docker image for chuck
 
 #### Build
 
-Set up Docker (`brew cask install docker`) if you don't have it yet. Clone this repository, cd into it, and build it:
+Set up Docker (`brew cask install docker` and then launch Docker.app from the Applications folder to finish installation) if you don't have it yet. Clone this repository, cd into it, and build it:
 
 	docker build -t chuck-renderer .
 
