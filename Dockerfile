@@ -35,6 +35,7 @@ RUN git clone --depth 1 https://github.com/mstorsjo/fdk-aac.git \
 	&& make \
 	&& make install
 	
+# Build FFMPEG with AAC encoder 
 RUN git clone --depth 1 git://source.ffmpeg.org/ffmpeg.git \
 	&& cd ffmpeg \ 
 	&& ./configure --enable-libfdk-aac \
