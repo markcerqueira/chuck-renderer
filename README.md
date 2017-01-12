@@ -1,4 +1,7 @@
 ### chuck-renderer
+
+[![Docker Automated build](https://img.shields.io/docker/automated/markcerqueira/chuck-renderer.svg?maxAge=2592000?style=plastic)](https://hub.docker.com/r/markcerqueira/chuck-renderer/)
+
 Docker image for ChucK rendering as a service
 
 #### Build
@@ -30,12 +33,6 @@ How to do stuff:
 #### Resources
 
 * Sinatra stub and Dockerfile setup adapted from [sinatra-mock][1]
-
-#### TODO
-
-* `make linux-alsa` since it has the fewest dependencies
-* Convert from .wav to something more lightweight like .m4a
-* Set this repo up as a [Trusted Build][2]
 
 [1]: https://github.com/thoom/sinatra-mock
 [2]: https://blog.docker.com/2013/11/introducing-trusted-builds/
