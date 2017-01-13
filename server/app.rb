@@ -25,7 +25,11 @@ post '/render/?' do
     
   # Write our temporary file to disk so we can pass it to ChucK below  
   File.open("#{output_filename}.ck", "w") do |f|
-    f.write(params['file'][:tempfile].read)
+    if !params['source'].nil?
+      f.write(params['source'])
+    elsif
+      f.write(params['file'][:tempfile].read)
+    end  
   end
   
   # Generate .wav file with export.ck script
@@ -33,12 +37,21 @@ post '/render/?' do
 
   # Convert .wav file to .m4a. More ffmpeg conversion: http://superuser.com/a/370637
   `ffmpeg -i #{WAV_FILE} -c:a libfdk_aac -vbr 4 #{AAC_FILE}`
+  
+  @last_render = output_filename
+    
+  erb :debug
+end
 
+get '/resource/:file/?' do
+  AAC_FILE = "#{OUTPUT_FOLDER}#{params[:file]}#{AAC_EXTENSION}"
+  
   begin
     attachment AAC_FILE
     content_type 'application/octet-stream'
-    File.read(AAC_FILE) 
+    File.read(AAC_FILE)
   rescue StandardError => error
     error.message
   end
 end
+
