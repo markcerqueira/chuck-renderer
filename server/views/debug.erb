@@ -1,39 +1,21 @@
-<h3>chuck-renderer debug</h3>
+<h3>chuck-renderer</h3>
+<span>Write some ChucK code or upload a ChucK file and then hit Render!</span><br><br>
 
-<% if @last_render.nil? %>
-	<span>Write some ChucK code or upload a ChucK file and then hit Render!</span><br><br>
-
-	<form action="/render/" method="POST" enctype="multipart/form-data">
-		<table>
-			<tbody>
-				<tr>
-					<td>.ck code:</td>
-					<td><textarea cols="40" rows="14" name="source"></textarea></td>
-				</tr>
-				<tr>
-					<td>.ck file:</td>
-					<td><input type="file" name="file"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="Render"></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
-<% else %>
-	<span>Check out your creation!</span><br><br>
-	
-	<audio controls preload="none" style="width:480px;">
-		<source src="/resource/<%= @last_render %>" type="audio/mp4" />
-	</audio>
-	
-	<p>
-		<a href="/debug/">Return</a>
-	</p>
-<% end %>
-
-
-
-
-
+<form action="/render/" method="POST" enctype="multipart/form-data">
+	<table>
+		<tbody>
+			<tr>
+				<td>.ck code:</td>
+				<td><textarea cols="40" rows="14" name="source"></textarea></td>
+			</tr>
+			<tr>
+				<td>.ck file:</td>
+				<td><input type="file" name="file"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Render"></td>
+			</tr>
+		</tbody>
+	</table>
+</form>
