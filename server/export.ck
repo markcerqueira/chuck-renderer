@@ -21,8 +21,16 @@ me.yield();
 
 if(doLimit)
 {
-    limit::second => now;
+    now + limit::second => time later;
+    
     Machine.shreds() @=> int shreds[];
+    while(shreds.size() > 1 && now < later)
+    {
+        1::second => now;
+        Machine.shreds() @=> shreds;
+    }
+    
+    Machine.shreds() @=> shreds;
     for(int i; i < shreds.size(); i++)
     {
         if(shreds[i] != me.id())
