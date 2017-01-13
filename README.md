@@ -2,7 +2,7 @@
 
 [![Docker Automated build](https://img.shields.io/docker/automated/markcerqueira/chuck-renderer.svg?maxAge=2592000?style=plastic)](https://hub.docker.com/r/markcerqueira/chuck-renderer/)
 
-Docker image for ChucK rendering as a service with .wav to .m4a conversion with FFMPEG. Check out a demo running on [DigitalOcean](http://chuck-renderer.4860ca31.svc.dockerapp.io:9000/debug).
+Docker image for ChucK rendering as a service with .wav to .m4a conversion with FFMPEG.
 
 #### Build
 
