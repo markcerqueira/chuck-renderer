@@ -48,7 +48,9 @@ RUN apt-get install -y \
 	ruby-dev
 	
 # Install sinatra and thin gems
-RUN gem install sinatra thin
+RUN gem install \
+	sinatra \
+	thin
 
 # Set Sinatra server as work directory
 WORKDIR /server
