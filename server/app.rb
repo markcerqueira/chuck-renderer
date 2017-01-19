@@ -33,7 +33,9 @@ post '/render/?' do
   File.open(chuck_filename, "w") do |f|
     if !params['source'].nil? && params['source'].to_s.strip.length > 0
       f.write(params['source'])
-    elsif
+    elsif params['resource'] != nil
+      f.write(params['resource'][:tempfile].read)
+    else
       f.write(params['file'][:tempfile].read)
     end
   end
@@ -52,7 +54,14 @@ post '/render/?' do
     `ffmpeg -i #{wav_file} -c:a libfdk_aac -vbr 4 #{aac_file}`
   end
     
-  redirect "/resource/result/#{output_filename}/"
+  # If params contains 'resource' we were called from the chuckpad-social service so return our m4a file now.
+  if params['resource'] != nil
+    attachment aac_file
+    content_type 'application/octet-stream'
+    File.read(aac_file)
+  else 
+    redirect "/resource/result/#{output_filename}/"
+  end
 end
 
 # Downloads .m4a resource for resource with given key
