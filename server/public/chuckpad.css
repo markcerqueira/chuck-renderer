@@ -1,0 +1,56 @@
+.top {
+    position: absolute;
+    left: 0;  right: 0;
+    height: 80px;
+    padding: 1em;
+}
+
+.left {
+    position: absolute;
+    left: 0; top: 80px; bottom: 0;
+    width: 178px;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+.main {
+    padding-top: 1em;
+    position: absolute;
+    left: 178px; top: 80px; right: 0; bottom: 0;
+}
+
+#wrapper {
+    width: 800px;
+    padding: 0.5em;
+    border: 1px solid black;
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+
+#first {
+    width: 500px;
+    float:left; /* add this */
+}
+
+#second {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+h3 {
+    padding: 0; margin: 0; color: #3e3e3e
+}
+
+h4 {
+    padding: 0; margin: 0; color: #3e3e3e
+}
+
+.top {
+    background: #8ff444;
+}
+
+.left {
+    background: #ffffff;
+}
+
+.main {
+    background: #ffffff;
+}

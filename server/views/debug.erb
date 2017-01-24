@@ -1,21 +1,57 @@
-<h3>chuck-renderer</h3>
-<span>Write some ChucK code or upload a ChucK file and then hit Render!</span><br><br>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/table.css">
+  <link rel="stylesheet" type="text/css" href="/chuckpad.css">
 
-<form action="/render/" method="POST" enctype="multipart/form-data">
-	<table>
-		<tbody>
-			<tr>
-				<td>.ck code:</td>
-				<td><textarea cols="40" rows="14" name="source"></textarea></td>
-			</tr>
-			<tr>
-				<td>.ck file:</td>
-				<td><input type="file" name="file"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Render"></td>
-			</tr>
-		</tbody>
-	</table>
-</form>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+
+<body style="margin: 0px;">
+
+<div style="background: #8ff444; padding: 1em;">
+  <div>
+    <h3>ChuckPad - chuck-renderer</h3>
+    <h4>Bring ChucK code to life, share ChucK with others, discover ChucK gems!</h4>
+  </div>
+</div>
+<br>
+
+<div style="padding: 1em;">
+	
+	<strong>What is this?</strong> chuck-renderer is a Docker image that takes ChucK source code or files and renders audio output.<br>
+	This renderer is used by <a href="https://www.chuckpad.io">www.chuckpad.io</a> to allow previews of uploaded ChucK source code directly in a web browser.<br>
+	<br>
+	<span>Write some ChucK code or upload a ChucK file and then hit Render! Need some ChucK code? Here's a 4 second sine wave:</span>
+	<p style="font-family: courier, monospace">
+		SinOsc s => dac;<br>
+		4::second => now;
+	</p>
+	You can find more ChucK examples at <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank">chuck.cs.princeton.edu</a>.
+	<br>
+	<br>
+	<form action="/render/" method="POST" enctype="multipart/form-data">
+		<table>
+			<tbody>
+				<tr>
+					<td>.ck code:</td>
+					<td><textarea cols="60" rows="14" name="source"></textarea></td>
+				</tr>
+				<tr>
+					<td>.ck file:</td>
+					<td><input type="file" name="file"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Render"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+
+</div>
+
+</body>
+
+</html>

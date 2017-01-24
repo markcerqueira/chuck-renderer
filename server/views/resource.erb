@@ -1,8 +1,35 @@
-<h3>chuck-renderer</h3>
-<span>Check out your creation!</span><br><br>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/table.css">
+  <link rel="stylesheet" type="text/css" href="/chuckpad.css">
 
-<audio controls preload="none" style="width:360px;">
-	<source src="/resource/download/<%= @key %>" type="audio/mp4" />
-</audio>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
 
-<p><a href="/debug/">Render something else</a></p>
+<body style="margin: 0px;">
+
+<div style="background: #8ff444; padding: 1em;">
+  <div>
+    <h3>ChuckPad - chuck-renderer</h3>
+    <h4>Bring ChucK code to life, share ChucK with others, discover ChucK gems!</h4>
+  </div>
+</div>
+<br>
+
+<div style="padding: 1em;">
+	
+	<span>Check out your creation!</span><br><br>
+
+	<audio controls preload="none" style="width:360px;">
+		<source src="/resource/download/<%= @key %>" type="audio/mp4" />
+	</audio>
+
+	<p><a href="/debug/">Return to chuck-renderer homepage</a></p>
+
+</div>
+
+</body>
+
+</html>
